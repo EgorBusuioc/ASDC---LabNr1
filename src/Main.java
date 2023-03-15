@@ -17,9 +17,20 @@ public class Main {
 
 
         System.out.println("Linear search ----> ");
-        System.out.println("");
+
+        System.out.println();
         positionOfElement = Algorithm.linearSearch(studentList, studentToBeFoundStart);
-        System.out.println("Position of the element = " + positionOfElement);
-        System.out.println("");
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.linearSearch(studentList, studentToBeFoundMiddle);
+        System.out.println("Position of the element in the middle of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.linearSearch(studentList, studentToBeFoundEnd);
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
     }
 }
