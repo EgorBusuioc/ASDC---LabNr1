@@ -10,7 +10,6 @@ public class Student implements Comparable <Student> {
     int birthDate;
     int admissionYear;
     int IDNP;
-    int numberInTable;
 
     public Student(){
         firstName = null;
@@ -57,7 +56,7 @@ public class Student implements Comparable <Student> {
 
     public int getNumberInTable() {
 
-        return numberInTable;
+        return IDNP;
     }
 
     //AutoCreated Equals method
@@ -71,7 +70,7 @@ public class Student implements Comparable <Student> {
     @Override
     public int compareTo(Student o) {
         int comparNumber = ((Student) o).getNumberInTable();
-        return this.numberInTable - comparNumber;
+        return this.IDNP - comparNumber;
     }
 
     public static Student createStudentFromString(String string){

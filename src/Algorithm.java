@@ -79,4 +79,75 @@ public class Algorithm {
         }
         return -1;
     }
+    private static long getFibonacciNumber(int num) {
+        long firstNumber = 0;
+        long secondNumber = 1;
+        for (int i = 0; i < num; i++) {
+            long temp = secondNumber;
+            secondNumber += firstNumber;
+            firstNumber = temp;
+        }
+        return firstNumber;
+    }
+
+    public static int fibonacciSearch(ArrayList<Student> list, Student searched){
+        long startTime = System.nanoTime();
+        long endTime;
+
+
+        int i,q,p,m;
+        int k = 0;
+        int listSize = list.size();
+        boolean stop = false;
+
+        while (getFibonacciNumber(k + 1) < listSize + 1) {
+            k++;
+        }
+
+        m = (int) (getFibonacciNumber(k + 1) - (listSize + 1));
+        i = (int) (getFibonacciNumber(k) - m);
+        p = (int) getFibonacciNumber(k - 1);
+        q = (int) getFibonacciNumber(k - 2);
+
+
+
+
+        int result = -1;
+        while (!stop) {
+            if (i < 0) {
+                if (p == 1)
+                    stop = true;
+                i = i + q;
+                p = p - q;
+                q = q - p;
+            } else if (i >= listSize) {
+                if (q == 0)
+                    stop = true;
+                i = i - q;
+                int temp = q;
+                q = p - q;
+                p = temp;;
+            } else if (searched.getNumberInTable() < list.get(i).getNumberInTable()) {
+                if (q == 0)
+                    stop = true;
+                i = i - q;
+                int temp = q;
+                q = p - q;
+                p = temp;
+            } else if (searched.getNumberInTable() > list.get(i).getNumberInTable()) {
+                if (p == 1)
+                    stop = true;
+                i = i + q;
+                p = p - q;
+                q = q - p;
+            }
+            else if (list.get(i).getNumberInTable() ==searched.getNumberInTable()) {
+                result = i;
+                break;
+            }
+        }
+        endTime = System.nanoTime();
+        System.out.println("Searching time: " + (endTime - startTime));
+        return result;
+    }
 }
