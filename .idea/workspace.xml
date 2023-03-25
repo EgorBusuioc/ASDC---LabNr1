@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecb93bac-de1e-4026-a2e9-76e757d526c3" name="Changes" comment="fibonacciSearch" />
+    <list default="true" id="ecb93bac-de1e-4026-a2e9-76e757d526c3" name="Changes" comment="finalPush" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +78,7 @@
       <workItem from="1678898725976" duration="3794000" />
       <workItem from="1679758444757" duration="2119000" />
       <workItem from="1679762649966" duration="2482000" />
+      <workItem from="1679765386780" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="file">
       <created>1678896710755</created>
@@ -107,7 +108,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679765008199</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fibonacciSearch">
+      <created>1679765633844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679765633844</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finalPush">
+      <created>1679765652424</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679765652424</updated>
+    </task>
+    <task id="LOCAL-00007" summary="finalPush">
+      <created>1679765680580</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679765680580</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +139,7 @@
     <MESSAGE value="file" />
     <MESSAGE value="linearSearch" />
     <MESSAGE value="fibonacciSearch" />
-    <option name="LAST_COMMIT_MESSAGE" value="fibonacciSearch" />
+    <MESSAGE value="finalPush" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalPush" />
   </component>
 </project>
