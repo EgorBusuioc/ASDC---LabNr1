@@ -1,7 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable <Student> {
 
     String firstName;
     String latName;
@@ -9,6 +10,7 @@ public class Student {
     int birthDate;
     int admissionYear;
     int IDNP;
+    int numberInTable;
 
     public Student(){
         firstName = null;
@@ -53,6 +55,11 @@ public class Student {
         return new Student(stud);
     }
 
+    public int getNumberInTable() {
+
+        return numberInTable;
+    }
+
     //AutoCreated Equals method
     @Override
     public boolean equals(Object o) {
@@ -60,6 +67,11 @@ public class Student {
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
         return birthDate == student.birthDate && admissionYear == student.admissionYear && IDNP == student.IDNP && firstName.equals(student.firstName) && latName.equals(student.latName) && faculty.equals(student.faculty);
+    }
+    @Override
+    public int compareTo(Student o) {
+        int comparNumber = ((Student) o).getNumberInTable();
+        return this.numberInTable - comparNumber;
     }
 
     public static Student createStudentFromString(String string){
@@ -90,4 +102,5 @@ public class Student {
         }
         return studentList;
     }
+
 }

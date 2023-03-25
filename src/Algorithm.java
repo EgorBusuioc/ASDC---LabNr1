@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Algorithm {
 
@@ -15,5 +16,67 @@ public class Algorithm {
         long after = System.nanoTime();
         System.out.println("Searching time = " + (after - before));
         return 0;
+    }
+
+    public static int binarySearch(ArrayList<Student> list, Student studentToBeFound) {
+        int firstIndex = 0;
+        int lastIndex = list.size() - 1;
+        int maxOfIterations = (int) (Math.log(list.size()) / Math.log(2));
+        int k = 0;
+        long before = System.nanoTime();
+
+        while (firstIndex <= lastIndex) {
+
+            if (k > maxOfIterations) {
+                System.out.println("Your element haven't been found in my table");
+                long after = System.nanoTime();
+                System.out.println("Searching time = " + (after - before));
+                return -1;
+            }
+            k++;
+
+            int middleIndex = (lastIndex + firstIndex) / 2;
+            if (studentToBeFound.equals(list.get(middleIndex))) {
+                long after = System.nanoTime();
+                System.out.println("Searching time = " + (after - before));
+                return middleIndex;
+            } else if (studentToBeFound.getNumberInTable() < list.get(middleIndex).getNumberInTable()) {
+                lastIndex = middleIndex - 1;
+            } else if (studentToBeFound.getNumberInTable() > list.get(middleIndex).getNumberInTable()) {
+                firstIndex = middleIndex + 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int interpolationSearch(ArrayList<Student> list, Student studentToBeFound) {
+        int firstIndex = 0;
+        int lastIndex = list.size() - 1;
+        long before = System.nanoTime();
+        int maxOfIterations = (int) (Math.log(list.size()) / Math.log(2));
+        int l = 0;
+
+        while (firstIndex <= lastIndex) {
+            if (l > maxOfIterations) {
+                System.out.println("Your element haven't been found in my table");
+                long after = System.nanoTime();
+                System.out.println("Searching time = " + (after - before));
+                return -1;
+            }
+            l++;
+            int k = list.get(lastIndex).getNumberInTable() - list.get(firstIndex).getNumberInTable();
+            int z = studentToBeFound.getNumberInTable() - list.get(firstIndex).getNumberInTable();
+            int pos = firstIndex + (lastIndex - firstIndex) / k * z;
+            if (list.get(pos).equals(studentToBeFound)) {
+                long after = System.nanoTime();
+                System.out.println("Searching time = " + (after - before));
+                return pos;
+            } else if (list.get(pos).getNumberInTable() < studentToBeFound.getNumberInTable()) {
+                firstIndex = pos + 1;
+            } else if (list.get(pos).getNumberInTable() > studentToBeFound.getNumberInTable()) {
+                lastIndex = pos - 1;
+            }
+        }
+        return -1;
     }
 }

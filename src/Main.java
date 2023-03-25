@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,6 +31,43 @@ public class Main {
 
         System.out.println();
         positionOfElement = Algorithm.linearSearch(studentList, studentToBeFoundEnd);
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
+
+
+        Collections.sort(studentList);
+        System.out.println("Binary search ----> ");
+
+        System.out.println();
+        positionOfElement = Algorithm.binarySearch(studentList, studentToBeFoundStart);
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.binarySearch(studentList, studentToBeFoundMiddle);
+        System.out.println("Position of the element in the middle of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.binarySearch(studentList, studentToBeFoundEnd);
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
+
+
+        System.out.println("Interpolation search ----> ");
+
+        System.out.println();
+        positionOfElement = Algorithm.interpolationSearch(studentList, studentToBeFoundStart);
+        System.out.println("Position of the element in the start of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.interpolationSearch(studentList, studentToBeFoundMiddle);
+        System.out.println("Position of the element in the middle of the list = " + positionOfElement);
+        System.out.println();
+
+        System.out.println();
+        positionOfElement = Algorithm.interpolationSearch(studentList, studentToBeFoundEnd);
         System.out.println("Position of the element in the start of the list = " + positionOfElement);
         System.out.println();
     }
